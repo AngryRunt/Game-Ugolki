@@ -5,11 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b86fd47d-6fdb-4d1f-8853-b4fd5a5af60a" name="Changes" comment="Game ugolki for diploma">
-      <change afterPath="$PROJECT_DIR$/src/ChessGame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ChessSquareComponent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Bishop.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/King.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Knight.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Pawn.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Queen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Rook.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ChessBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ChessBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ChessGameGui.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,30 +31,32 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2n1bN0tA9pRs46BCnNm90yyRJx0" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "/home/angryrunt/dev/angryrunt/EDUCATION NGTU/JAVA/DIPLOM_UGOLKI/UGOLKI2/src/Main.java",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.ChessGameGUI.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ChessGameGui.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;/home/angryrunt/dev/angryrunt/EDUCATION NGTU/JAVA/DIPLOM_UGOLKI/UGOLKI2/src/Main.java&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -67,7 +73,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1728143487193</updated>
-      <workItem from="1728143488205" duration="9544000" />
+      <workItem from="1728143488205" duration="10894000" />
+      <workItem from="1728321213077" duration="647000" />
     </task>
     <task id="LOCAL-00001" summary="Game ugolki for diploma">
       <option name="closed" value="true" />
@@ -85,7 +92,15 @@
       <option name="project" value="LOCAL" />
       <updated>1728317239252</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Game ugolki for diploma">
+      <option name="closed" value="true" />
+      <created>1728319857467</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1728319857467</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

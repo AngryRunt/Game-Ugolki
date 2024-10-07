@@ -2,13 +2,26 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.List;
 
-public class Main extends JFrame {
+public class ChessGameGui extends JFrame {
     private final ChessSquareComponent[][] squares = new ChessSquareComponent[8][8];
     private final ChessGame game = new ChessGame();
 
-    public Main() {
+    private final Map<Class<? extends Piece>, String> pieceUnicodeMap = new HashMap<>() {
+        {
+            put(Pawn.class, "\u265F");
+            put(Rook.class, "\u265C");
+            put(Knight.class, "\u265E");
+            put(Bishop.class, "\u265D");
+            put(Queen.class, "\u265B");
+            put(King.class, "\u265A");
+        }
+    };
+
+    public ChessGameGui() {
         setTitle("Chess Game");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new GridLayout(8, 8));
@@ -44,7 +57,7 @@ public class Main extends JFrame {
                 Piece piece = board.getPiece(row, col);
                 if (piece != null) {
                     // If using Unicode symbols:
-                    String symbol = "/u26C";
+                    String symbol = pieceUnicodeMap.get(piece.getClass());
                     Color color = (piece.getColor() == PieceColor.WHITE) ? Color.WHITE : Color.BLACK;
                     squares[row][col].setPieceSymbol(symbol, color);
                 } else {
@@ -119,6 +132,6 @@ public class Main extends JFrame {
     }
 
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(Main::new);
+        SwingUtilities.invokeLater(ChessGameGui::new);
     }
 }
