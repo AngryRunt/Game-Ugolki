@@ -24,3 +24,12 @@ class ChessBoard {
         board[0][0] = new Checker(PieceColor.BLACK, new Position(0, 0));
     }
     }
+        public void movePiece(Position start, Position end) {
+            if (board[start.getRow()][start.getColumn()] != null &&
+            board[start.getRow()][start.getColumn()].isValidMove(end, board)) {
+
+        board[end.getRow()][end.getColumn()] = board[start.getRow()][start.getColumn()];
+        board[end.getRow()][end.getColumn()].setPosition(end);
+        board[start.getRow()][start.getColumn()] = null;
+    }
+}
