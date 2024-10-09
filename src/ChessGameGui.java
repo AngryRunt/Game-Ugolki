@@ -12,12 +12,12 @@ public class ChessGameGui extends JFrame {
 
     private final Map<Class<? extends Piece>, String> pieceUnicodeMap = new HashMap<>() {
         {
-            put(Pawn.class, "\u265F");
-            put(Rook.class, "\u265C");
-            put(Knight.class, "\u265E");
-            put(Bishop.class, "\u265D");
-            put(Queen.class, "\u265B");
-            put(King.class, "\u265A");
+            put(Pawn.class, "⛂");
+            put(Rook.class, "♜");
+            put(Knight.class, "♞");
+            put(Bishop.class, "♝");
+            put(Queen.class, "♛");
+            put(King.class, "♚");
         }
     };
 
