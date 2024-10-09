@@ -1,5 +1,5 @@
-public class Pawn extends Piece {
-    public Pawn(PieceColor color, Position position) {
+public class Checker extends Piece {
+    public Checker(PieceColor color, Position position) {
         super(color, position);
     }
 

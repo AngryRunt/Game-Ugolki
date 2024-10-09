@@ -12,7 +12,7 @@ public class ChessGameGui extends JFrame {
 
     private final Map<Class<? extends Piece>, String> pieceUnicodeMap = new HashMap<>() {
         {
-            put(Pawn.class, "⛂");
+            put(Checker.class, "⛂");
             put(Rook.class, "♜");
             put(Knight.class, "♞");
             put(Bishop.class, "♝");
