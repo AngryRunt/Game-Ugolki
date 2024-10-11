@@ -15,7 +15,7 @@ public class Checker extends Piece {
 
         boolean isStartingPosition = (color == PieceColor.WHITE && position.getRow() == 6) ||
                 (color == PieceColor.BLACK && position.getRow() == 1);
-        if (colDiff == 0 && rowDiff == 2 && isStartingPosition
+        if (colDiff == 0 && rowDiff == 1 && isStartingPosition
                 && board[newPosition.getRow()][newPosition.getColumn()] == null) {
             int middleRow = position.getRow() + forwardDirection;
             if (board[middleRow][position.getColumn()] == null) {

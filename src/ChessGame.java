@@ -134,7 +134,7 @@ public class ChessGame {
             return new ArrayList<>();
 
         List<Position> legalMoves = new ArrayList<>();
-        switch (selectedPiece.getClass().getSimpleName()) {
+        /*switch (selectedPiece.getClass().getSimpleName()) {
             case "Pawn":
                 addPawnMoves(position, selectedPiece.getColor(), legalMoves);
                 break;
@@ -156,7 +156,9 @@ public class ChessGame {
                 addSingleMoves(position, new int[][] { { 1, 0 }, { -1, 0 }, { 0, 1 }, { 0, -1 }, { 1, 1 }, { -1, -1 },
                         { 1, -1 }, { -1, 1 } }, legalMoves);
                 break;
-        }
+        }*/
+
+        addSingleMoves(position, new int[][] { { 1, 0 }, { -1, 0 }, { 0, 1 }, { 0, -1 } }, legalMoves);
         return legalMoves;
     }
 

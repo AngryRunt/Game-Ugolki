@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b86fd47d-6fdb-4d1f-8853-b4fd5a5af60a" name="Changes" comment="Changed places of figuries. Pawns replaced by checkers">
-      <change beforePath="$PROJECT_DIR$/src/ChessBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ChessBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ChessGameGui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ChessGameGui.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pawn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Checker.java" afterDir="false" />
+    <list default="true" id="b86fd47d-6fdb-4d1f-8853-b4fd5a5af60a" name="Changes" comment="renamed pawn to checker">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Checker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Checker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ChessGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ChessGame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,23 +34,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.ChessGameGUI.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ChessGameGui.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;/home/angryrunt/dev/angryrunt/EDUCATION NGTU/JAVA/DIPLOM_UGOLKI/UGOLKI2/src/Main.java&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.ChessGameGUI.executor": "Run",
+    "Application.ChessGameGui.executor": "Run",
+    "Application.Main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "/home/angryrunt/dev/angryrunt/EDUCATION NGTU/JAVA/DIPLOM_UGOLKI/UGOLKI2/src/Main.java",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
+  <component name="RunManager">
+    <configuration name="ChessGameGui" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ChessGameGui" />
+      <module name="UGOLKI2" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.ChessGameGui" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -69,7 +83,9 @@
       <updated>1728143487193</updated>
       <workItem from="1728143488205" duration="10894000" />
       <workItem from="1728321213077" duration="684000" />
-      <workItem from="1728486812430" duration="2640000" />
+      <workItem from="1728486812430" duration="3516000" />
+      <workItem from="1728491900965" duration="3000" />
+      <workItem from="1728659127643" duration="4998000" />
     </task>
     <task id="LOCAL-00001" summary="Game ugolki for diploma">
       <option name="closed" value="true" />
@@ -111,7 +127,15 @@
       <option name="project" value="LOCAL" />
       <updated>1728489280242</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="renamed pawn to checker">
+      <option name="closed" value="true" />
+      <created>1728489552268</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1728489552268</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -121,6 +145,7 @@
     <MESSAGE value="Game ugolki for diploma" />
     <MESSAGE value="restored chess game" />
     <MESSAGE value="Changed places of figuries. Pawns replaced by checkers" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed places of figuries. Pawns replaced by checkers" />
+    <MESSAGE value="renamed pawn to checker" />
+    <option name="LAST_COMMIT_MESSAGE" value="renamed pawn to checker" />
   </component>
 </project>
