@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b86fd47d-6fdb-4d1f-8853-b4fd5a5af60a" name="Changes" comment="renamed pawn to checker">
+    <list default="true" id="b86fd47d-6fdb-4d1f-8853-b4fd5a5af60a" name="Changes" comment="Implemented legal moves for checker">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Checker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Checker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ChessGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ChessGame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -85,7 +84,7 @@
       <workItem from="1728321213077" duration="684000" />
       <workItem from="1728486812430" duration="3516000" />
       <workItem from="1728491900965" duration="3000" />
-      <workItem from="1728659127643" duration="4998000" />
+      <workItem from="1728659127643" duration="7739000" />
     </task>
     <task id="LOCAL-00001" summary="Game ugolki for diploma">
       <option name="closed" value="true" />
@@ -135,7 +134,15 @@
       <option name="project" value="LOCAL" />
       <updated>1728489552268</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Implemented legal moves for checker">
+      <option name="closed" value="true" />
+      <created>1728666423118</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1728666423118</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -146,6 +153,7 @@
     <MESSAGE value="restored chess game" />
     <MESSAGE value="Changed places of figuries. Pawns replaced by checkers" />
     <MESSAGE value="renamed pawn to checker" />
-    <option name="LAST_COMMIT_MESSAGE" value="renamed pawn to checker" />
+    <MESSAGE value="Implemented legal moves for checker" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented legal moves for checker" />
   </component>
 </project>

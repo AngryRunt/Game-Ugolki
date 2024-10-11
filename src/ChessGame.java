@@ -183,13 +183,19 @@ public class ChessGame {
     private void addSingleMoves(Position position, int[][] moves, List<Position> legalMoves) {
         for (int[] move : moves) {
             Position newPos = new Position(position.getRow() + move[0], position.getColumn() + move[1]);
-            if (isPositionOnBoard(newPos) && (board.getPiece(newPos.getRow(), newPos.getColumn()) == null ||
-                    board.getPiece(newPos.getRow(), newPos.getColumn()).getColor() != board
-                            .getPiece(position.getRow(), position.getColumn()).getColor())) {
-                legalMoves.add(newPos);
+            if (isPositionOnBoard(newPos)) {
+                if (board.getPiece(newPos.getRow(), newPos.getColumn()) != null) {
+                    if (Math.abs(newPos.getRow()) == 1) {
+                        legalMoves.add(new Position(newPos.getRow() * 2, 0));
+                    }
+                    if (Math.abs(newPos.getColumn()) == 1) {
+                        legalMoves.add(new Position(0, newPos.getColumn() * 2));
+                    }
+            } else legalMoves.add(newPos);
             }
         }
     }
+
 
     private void addPawnMoves(Position position, PieceColor color, List<Position> legalMoves) {
         int direction = color == PieceColor.WHITE ? -1 : 1;
