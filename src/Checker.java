@@ -5,11 +5,11 @@ public class Checker extends Piece {
 
     @Override
     public boolean isValidMove(Position newPosition, Piece[][] board) {
-        int forwardDirection = color == PieceColor.WHITE ? -1 : 1;
-        int rowDiff = (newPosition.getRow() - position.getRow()) * forwardDirection;
+        //int forwardDirection = color == PieceColor.WHITE ? -1 : 1;
+        int rowDiff = (newPosition.getRow() - position.getRow())/* * forwardDirection*/;
         int colDiff = newPosition.getColumn() - position.getColumn();
 
-        if (colDiff == 0 && rowDiff == 1 && board[newPosition.getRow()][newPosition.getColumn()] == null) {
+        if (((colDiff == 0 && rowDiff <= 2)||(rowDiff == 0 && colDiff <=2)) && board[newPosition.getRow()][newPosition.getColumn()] == null) {
             return true;
         }
 
@@ -17,7 +17,7 @@ public class Checker extends Piece {
                 (color == PieceColor.BLACK && position.getRow() == 1);
         if (colDiff == 0 && rowDiff == 1 && isStartingPosition
                 && board[newPosition.getRow()][newPosition.getColumn()] == null) {
-            int middleRow = position.getRow() + forwardDirection;
+            int middleRow = position.getRow() /*+ forwardDirection*/;
             if (board[middleRow][position.getColumn()] == null) {
                 return true;
             }
