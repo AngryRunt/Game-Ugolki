@@ -181,17 +181,35 @@ public class ChessGame {
     }
 
     private void addSingleMoves(Position position, int[][] moves, List<Position> legalMoves, final boolean isRecursiveCall) {
+        //перебираем все смещения
         for (int[] move : moves) {
+            // получаем новую позицию по смещении
             Position newPos = new Position(position.getRow() + move[0], position.getColumn() + move[1]);
+            // проверяем, находится ли позиция на доске
             if (isPositionOnBoard(newPos)) {
+                // проверяем, есть ли рядом шашка
                 if (board.getPiece(newPos.getRow(), newPos.getColumn()) != null) {
+                    // получаем позицию через шашку
                     newPos = new Position(position.getRow() + move[0] * 2, position.getColumn() + move[1] * 2);
+                    // проверяем, что позиция свободна и находится на доске
                     if (isPositionOnBoard(newPos) && (board.getPiece(newPos.getRow(), newPos.getColumn()) == null)) {
+
+                         /*
+                         * если рядом с новой позицией есть шашка, то мы можем прыгнуть и через нее
+                         * тогда необходимо рекурсивно получить все возможные прыжки через одну
+                         * для этого проверяем, что мы не вернудись в предыдущую позицию
+                         */
+
                         if (!legalMoves.contains(newPos)) {
+                            // добавляем новую позицию в список разрешенных
                             legalMoves.add(newPos);
+                            // проверяем врзможность нового прыжка вокруг новой позиции
                             addSingleMoves(newPos, new int[][] { { 1, 0 }, { -1, 0 }, { 0, 1 }, { 0, -1 } }, legalMoves, true);
                         }
                     }
+                    //если вызов был рекурсивным, в список разрещеннвх могут попасть все клетки вокруг
+                    //при том, что после прыжка разрешен только прыжок
+                    // поэтому проверяем, что функция была вызвана не рекурсивно
                 } else if (!isRecursiveCall) {
                     legalMoves.add(newPos);
                 }
