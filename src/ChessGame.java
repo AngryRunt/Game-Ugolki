@@ -180,20 +180,27 @@ public class ChessGame {
         }
     }
 
-    private void addSingleMoves(Position position, int[][] moves, List<Position> legalMoves) {
+    private void addSingleMoves(Position position, int[][] moves, List<Position> legalMoves, final boolean isRecursiveCall) {
         for (int[] move : moves) {
             Position newPos = new Position(position.getRow() + move[0], position.getColumn() + move[1]);
             if (isPositionOnBoard(newPos)) {
                 if (board.getPiece(newPos.getRow(), newPos.getColumn()) != null) {
-                    if (Math.abs(newPos.getRow()) == 1) {
-                        legalMoves.add(new Position(newPos.getRow() * 2, 0));
+                    newPos = new Position(position.getRow() + move[0] * 2, position.getColumn() + move[1] * 2);
+                    if (isPositionOnBoard(newPos) && (board.getPiece(newPos.getRow(), newPos.getColumn()) == null)) {
+                        if (!legalMoves.contains(newPos)) {
+                            legalMoves.add(newPos);
+                            addSingleMoves(newPos, new int[][] { { 1, 0 }, { -1, 0 }, { 0, 1 }, { 0, -1 } }, legalMoves, true);
+                        }
                     }
-                    if (Math.abs(newPos.getColumn()) == 1) {
-                        legalMoves.add(new Position(0, newPos.getColumn() * 2));
-                    }
-            } else legalMoves.add(newPos);
+                } else if (!isRecursiveCall) {
+                    legalMoves.add(newPos);
+                }
             }
         }
+    }
+
+    private void addSingleMoves(Position position, int[][] moves, List<Position> legalMoves) {
+        addSingleMoves(position, moves, legalMoves, false);
     }
 
 
