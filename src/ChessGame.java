@@ -50,7 +50,7 @@ public class ChessGame {
             return false;
         }
 
-        if (movingPiece.isValidMove(end, board.getBoard())) {
+        if (legalMoves.contains(end)) {
             board.movePiece(start, end);
             whiteTurn = !whiteTurn;
             return true;
@@ -133,8 +133,7 @@ public class ChessGame {
         if (selectedPiece == null)
             return new ArrayList<>();
 
-        List<Position> legalMoves = new ArrayList<>();
-        /*switch (selectedPiece.getClass().getSimpleName()) {
+                /*switch (selectedPiece.getClass().getSimpleName()) {
             case "Pawn":
                 addPawnMoves(position, selectedPiece.getColor(), legalMoves);
                 break;
@@ -158,6 +157,13 @@ public class ChessGame {
                 break;
         }*/
 
+
+
+        if (legalMoves == null){
+            legalMoves = new ArrayList<>();
+        }
+        legalMoves.clear();
+
         addSingleMoves(position, new int[][] { { 1, 0 }, { -1, 0 }, { 0, 1 }, { 0, -1 } }, legalMoves);
         return legalMoves;
     }
@@ -180,6 +186,7 @@ public class ChessGame {
         }
     }
 
+    private List<Position> legalMoves = null;
     private void addSingleMoves(Position position, int[][] moves, List<Position> legalMoves, final boolean isRecursiveCall) {
         //перебираем все смещения
         for (int[] move : moves) {
@@ -199,7 +206,6 @@ public class ChessGame {
                          * тогда необходимо рекурсивно получить все возможные прыжки через одну
                          * для этого проверяем, что мы не вернудись в предыдущую позицию
                          */
-
                         if (!legalMoves.contains(newPos)) {
                             // добавляем новую позицию в список разрешенных
                             legalMoves.add(newPos);

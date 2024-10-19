@@ -58,8 +58,7 @@ public class ChessBoard {
     }
 
     public void movePiece(Position start, Position end) {
-        if (board[start.getRow()][start.getColumn()] != null &&
-                board[start.getRow()][start.getColumn()].isValidMove(end, board)) {
+        if (board[start.getRow()][start.getColumn()] != null) {
 
             board[end.getRow()][end.getColumn()] = board[start.getRow()][start.getColumn()];
             board[end.getRow()][end.getColumn()].setPosition(end);
