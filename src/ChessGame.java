@@ -49,7 +49,7 @@ public class ChessGame {
         if (movingPiece == null || movingPiece.getColor() != (whiteTurn ? PieceColor.WHITE : PieceColor.BLACK)) {
             return false;
         }
-
+// проверяем, находится ли end в списке разрешенных ходов
         if (legalMoves.contains(end)) {
             board.movePiece(start, end);
             whiteTurn = !whiteTurn;
@@ -85,8 +85,28 @@ public class ChessGame {
         throw new RuntimeException("King not found, which should never happen.");
     }
 
-    public boolean isCheckmate(PieceColor kingColor) {
-        if (!isInCheck(kingColor)) {
+    public boolean isCheckmate(PieceColor color) {
+        int i = 0, j = 0;
+        boolean isCheckmate = true;
+        if (color == PieceColor.WHITE) {
+           i = 0;
+           j = 5;
+
+        }
+        else{
+            i = 5;
+            j = 0;
+        }
+        int endI = i + 3, endJ = j + 3;
+        while (i < endI && isCheckmate) {
+            while (j < endJ && isCheckmate) {
+                isCheckmate = (board.getPiece(i, j) != null) && (board.getPiece(i, j).getColor() == color);
+                j++;
+            }
+            i++;
+        }
+
+        /*if (!isInCheck(kingColor)) {
             return false;
         }
 
@@ -106,8 +126,8 @@ public class ChessGame {
                     return false;
                 }
             }
-        }
-        return true;
+        }*/
+        return isCheckmate;
     }
 
     private boolean isPositionOnBoard(Position position) {
@@ -158,7 +178,8 @@ public class ChessGame {
         }*/
 
 
-
+// список хранит разрешенные ходы
+        // очищается лениво перед новым заполнением (как посуда перед едой =))
         if (legalMoves == null){
             legalMoves = new ArrayList<>();
         }

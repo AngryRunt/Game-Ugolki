@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b86fd47d-6fdb-4d1f-8853-b4fd5a5af60a" name="Changes" comment="">
+    <list default="true" id="b86fd47d-6fdb-4d1f-8853-b4fd5a5af60a" name="Changes" comment="refactoring of start positions of checkers">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ChessBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ChessBoard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ChessGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ChessGame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -90,7 +89,7 @@
       <workItem from="1728659127643" duration="7797000" />
       <workItem from="1728920018231" duration="9542000" />
       <workItem from="1729094529092" duration="91000" />
-      <workItem from="1729339780117" duration="3155000" />
+      <workItem from="1729339780117" duration="10876000" />
     </task>
     <task id="LOCAL-00001" summary="Game ugolki for diploma">
       <option name="closed" value="true" />
@@ -180,7 +179,23 @@
       <option name="project" value="LOCAL" />
       <updated>1728930675268</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="fixed moves with jump">
+      <option name="closed" value="true" />
+      <created>1729343002421</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1729343002421</updated>
+    </task>
+    <task id="LOCAL-00013" summary="refactoring of start positions of checkers">
+      <option name="closed" value="true" />
+      <created>1729428753768</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1729428753768</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -195,6 +210,8 @@
     <MESSAGE value="Implemented recursive highlightning for jumping" />
     <MESSAGE value="Implemented steps for one square jump" />
     <MESSAGE value="add comments" />
-    <option name="LAST_COMMIT_MESSAGE" value="add comments" />
+    <MESSAGE value="fixed moves with jump" />
+    <MESSAGE value="refactoring of start positions of checkers" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactoring of start positions of checkers" />
   </component>
 </project>
