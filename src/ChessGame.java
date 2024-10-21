@@ -51,6 +51,7 @@ public class ChessGame {
         }
 // проверяем, находится ли end в списке разрешенных ходов
         if (legalMoves.contains(end)) {
+            counter.UpCounter(movingPiece.color);
             board.movePiece(start, end);
             whiteTurn = !whiteTurn;
             return true;
@@ -86,6 +87,30 @@ public class ChessGame {
     }
 
     public boolean isCheckmate(PieceColor color) {
+        if (counter.getcounter(color) == 12){
+            int i = 0, j = 0;
+            boolean isCheckmate = true;
+            if (color == PieceColor.WHITE) {
+                i = 5;
+                j = 0;
+
+            }
+            else{
+                i = 0;
+                j = 5;
+            }
+            int endI = i + 3, endJ = j + 3;
+            while (i < endI && isCheckmate) {
+                while (j < endJ && isCheckmate) {
+                    isCheckmate = (board.getPiece(i, j) == null);
+                    j++;
+                }
+                i++;
+            }
+
+            return !isCheckmate;
+        }
+
         int i = 0, j = 0;
         boolean isCheckmate = true;
         if (color == PieceColor.WHITE) {
