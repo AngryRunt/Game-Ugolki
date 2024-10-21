@@ -275,4 +275,32 @@ public class ChessGame {
             }
         }
     }
+    private MoveCounter counter = new MoveCounter();
+    private static class MoveCounter{
+        private int WhiteCounter = 0;
+        private int BlackCounter = 0;
+        private MoveCounter(){};
+                public int getcounter(PieceColor color) {
+                    switch (color) {
+                        case WHITE:
+                            return WhiteCounter;
+
+                        case BLACK:
+                            return BlackCounter;
+                        default:
+                            return -1;
+                    }
+                }
+                 public void UpCounter(PieceColor color){
+                        switch(color){
+                            case WHITE:
+                                WhiteCounter++;
+                                break;
+                            case BLACK:
+                                BlackCounter++;
+                                break;
+                            default: return;
+                        }
+                    }
+             }
 }
