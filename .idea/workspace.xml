@@ -7,6 +7,7 @@
     <list default="true" id="b86fd47d-6fdb-4d1f-8853-b4fd5a5af60a" name="Changes" comment="implemented movecounter">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ChessGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ChessGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ChessGameGui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ChessGameGui.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,6 +91,7 @@
       <workItem from="1728920018231" duration="9542000" />
       <workItem from="1729094529092" duration="91000" />
       <workItem from="1729339780117" duration="17687000" />
+      <workItem from="1729697727041" duration="7061000" />
     </task>
     <task id="LOCAL-00001" summary="Game ugolki for diploma">
       <option name="closed" value="true" />

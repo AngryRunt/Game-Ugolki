@@ -16,6 +16,7 @@ public class ChessGame {
     public void resetGame() {
         this.board = new ChessBoard();
         this.whiteTurn = true;
+        counter.ResetCounter();
     }
 
     public PieceColor getCurrentPlayerColor() {
@@ -87,9 +88,11 @@ public class ChessGame {
     }
 
     public boolean isCheckmate(PieceColor color) {
+        System.out.println("WHITEMOVE" + String.valueOf(counter.getcounter(PieceColor.WHITE)));
+        System.out.println("BLACKEMOVE" + String.valueOf(counter.getcounter(PieceColor.BLACK)));
         if (counter.getcounter(color) == 12){
             int i = 0, j = 0;
-            boolean isCheckmate = true;
+
             if (color == PieceColor.WHITE) {
                 i = 5;
                 j = 0;
@@ -100,19 +103,20 @@ public class ChessGame {
                 j = 5;
             }
             int endI = i + 3, endJ = j + 3;
-            while (i < endI && isCheckmate) {
-                while (j < endJ && isCheckmate) {
-                    isCheckmate = (board.getPiece(i, j) == null);
-                    j++;
+            int count = 0;
+            for (int r = i; r < endI; r++) {
+                for (int c = j; c < endJ; c++) {
+                    if (board.getPiece(r, c) != null) {
+                        count++;
+                    }
                 }
-                i++;
             }
 
-            return !isCheckmate;
+            return count == 0 ? true : false;
         }
 
         int i = 0, j = 0;
-        boolean isCheckmate = true;
+
         if (color == PieceColor.WHITE) {
            i = 0;
            j = 5;
@@ -123,12 +127,14 @@ public class ChessGame {
             j = 0;
         }
         int endI = i + 3, endJ = j + 3;
-        while (i < endI && isCheckmate) {
-            while (j < endJ && isCheckmate) {
-                isCheckmate = (board.getPiece(i, j) != null) && (board.getPiece(i, j).getColor() == color);
-                j++;
+        int count = 0;
+        for (int r = i; r < endI; r++) {
+            for (int c = j; c < endJ; c++) {
+                if ((board.getPiece(r, c) != null) &&
+                        (board.getPiece(r, c).getColor() == color)) {
+                    count++;
+                }
             }
-            i++;
         }
 
         /*if (!isInCheck(kingColor)) {
@@ -152,7 +158,8 @@ public class ChessGame {
                 }
             }
         }*/
-        return isCheckmate;
+
+        return count == 9 ? true : false;
     }
 
     private boolean isPositionOnBoard(Position position) {
@@ -315,6 +322,10 @@ public class ChessGame {
                         default:
                             return -1;
                     }
+                }
+                public void ResetCounter(){
+                    WhiteCounter = 0;
+                    BlackCounter = 0;
                 }
                  public void UpCounter(PieceColor color){
                         switch(color){

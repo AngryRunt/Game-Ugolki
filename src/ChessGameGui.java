@@ -72,7 +72,7 @@ public class ChessGameGui extends JFrame {
         clearHighlights();
         if (moveResult) {
             refreshBoard();
-            checkGameState();
+            //checkGameState();
             checkGameOver();
         } else if (game.isPieceSelected()) {
             highlightLegalMoves(new Position(row, col));
@@ -120,7 +120,8 @@ public class ChessGameGui extends JFrame {
     }
 
     private void checkGameOver() {
-        if (game.isCheckmate(game.getCurrentPlayerColor())) {
+        PieceColor currentPlayer = game.getCurrentPlayerColor() == PieceColor.WHITE ? PieceColor.BLACK : PieceColor.WHITE;
+        if (game.isCheckmate(currentPlayer)) {
             int response = JOptionPane.showConfirmDialog(this, "Checkmate! Would you like to play again?", "Game Over",
                     JOptionPane.YES_NO_OPTION);
             if (response == JOptionPane.YES_OPTION) {
