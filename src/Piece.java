@@ -19,5 +19,4 @@ public abstract class Piece {
         this.position = position;
     }
 
-    public abstract boolean isValidMove(Position newPosition, Piece[][] board);
 }

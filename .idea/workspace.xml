@@ -4,10 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b86fd47d-6fdb-4d1f-8853-b4fd5a5af60a" name="Changes" comment="implemented movecounter">
+    <list default="true" id="b86fd47d-6fdb-4d1f-8853-b4fd5a5af60a" name="Changes" comment="fixed problems with game over">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ChessGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ChessGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ChessGameGui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ChessGameGui.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Bishop.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Checker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Checker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ChessBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ChessBoard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ChessGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CornersGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ChessGameGui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CornersGameGui.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ChessSquareComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ChessSquareComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/King.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Knight.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Piece.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PieceColor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PieceColor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Position.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Queen.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Rook.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +49,7 @@
   "keyToString": {
     "Application.ChessGameGUI.executor": "Run",
     "Application.ChessGameGui.executor": "Run",
+    "Application.CornersGameGui.executor": "Run",
     "Application.Main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
@@ -54,8 +66,8 @@
   }
 }]]></component>
   <component name="RunManager">
-    <configuration name="ChessGameGui" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ChessGameGui" />
+    <configuration name="CornersGameGui" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="CornersGameGui" />
       <module name="UGOLKI2" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -63,7 +75,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ChessGameGui" />
+        <item itemvalue="Application.CornersGameGui" />
       </list>
     </recent_temporary>
   </component>
@@ -91,7 +103,7 @@
       <workItem from="1728920018231" duration="9542000" />
       <workItem from="1729094529092" duration="91000" />
       <workItem from="1729339780117" duration="17687000" />
-      <workItem from="1729697727041" duration="7061000" />
+      <workItem from="1729697727041" duration="13465000" />
     </task>
     <task id="LOCAL-00001" summary="Game ugolki for diploma">
       <option name="closed" value="true" />
@@ -213,7 +225,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729529734341</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="fixed problems with game over">
+      <option name="closed" value="true" />
+      <created>1729704865078</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1729704865078</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -232,6 +252,7 @@
     <MESSAGE value="refactoring of start positions of checkers" />
     <MESSAGE value="Added gameover checking" />
     <MESSAGE value="implemented movecounter" />
-    <option name="LAST_COMMIT_MESSAGE" value="implemented movecounter" />
+    <MESSAGE value="fixed problems with game over" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed problems with game over" />
   </component>
 </project>

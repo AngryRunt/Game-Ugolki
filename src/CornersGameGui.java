@@ -6,22 +6,17 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 
-public class ChessGameGui extends JFrame {
+public class CornersGameGui extends JFrame {
     private final ChessSquareComponent[][] squares = new ChessSquareComponent[8][8];
-    private final ChessGame game = new ChessGame();
+    private final CornersGame game = new CornersGame();
 
     private final Map<Class<? extends Piece>, String> pieceUnicodeMap = new HashMap<>() {
         {
             put(Checker.class, "⛂");
-            put(Rook.class, "♜");
-            put(Knight.class, "♞");
-            put(Bishop.class, "♝");
-            put(Queen.class, "♛");
-            put(King.class, "♚");
         }
     };
 
-    public ChessGameGui() {
+    public CornersGameGui() {
         setTitle("Chess Game");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new GridLayout(8, 8));
@@ -72,7 +67,6 @@ public class ChessGameGui extends JFrame {
         clearHighlights();
         if (moveResult) {
             refreshBoard();
-            //checkGameState();
             checkGameOver();
         } else if (game.isPieceSelected()) {
             highlightLegalMoves(new Position(row, col));
@@ -80,14 +74,6 @@ public class ChessGameGui extends JFrame {
         refreshBoard();
     }
 
-    private void checkGameState() {
-        PieceColor currentPlayer = game.getCurrentPlayerColor();
-        boolean inCheck = game.isInCheck(currentPlayer);
-
-        if (inCheck) {
-            JOptionPane.showMessageDialog(this, currentPlayer + " is in check!");
-        }
-    }
 
     private void highlightLegalMoves(Position position) {
         List<Position> legalMoves = game.getLegalMovesForPieceAt(position);
@@ -133,6 +119,6 @@ public class ChessGameGui extends JFrame {
     }
 
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(ChessGameGui::new);
+        SwingUtilities.invokeLater(CornersGameGui::new);
     }
 }

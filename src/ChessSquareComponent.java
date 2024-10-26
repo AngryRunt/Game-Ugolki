@@ -2,8 +2,8 @@ import javax.swing.*;
 import java.awt.*;
 
 public class ChessSquareComponent extends JButton {
-    private int row;
-    private int col;
+    private final int row;
+    private final int col;
 
     public ChessSquareComponent(int row, int col) {
         this.row = row;
