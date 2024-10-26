@@ -11,12 +11,24 @@ public abstract class Piece {
         return color;
     }
 
+
     public Position getPosition() {
         return position;
     }
 
     public void setPosition(Position position) {
         this.position = position;
+    }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof Piece) {
+            Piece piece = (Piece) obj;
+            if (this.position.equals(piece.position)&&this.color.equals(piece.color)) {
+
+                return true;
+            }
+        }
+        return false;
     }
 
 }
