@@ -6,8 +6,28 @@ private static Referee referee = new Referee();
 private List<BotChecker>checkers = new ArrayList<>();
 private CornersGame game;
 
+
     public Bot(CornersGame game) {
         this.game = game;
+    }
+    public static class BotMove{
+
+        public BotMove(Position startpos, Position endpos) {
+            this.startpos = startpos;
+            this.endpos = endpos;
+        }
+
+        private Position startpos;
+        private Position endpos;
+
+        public Position getStartpos() {
+            return startpos;
+        }
+
+        public Position getEndpos() {
+            return endpos;
+        }
+
     }
 
 
