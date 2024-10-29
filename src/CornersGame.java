@@ -4,9 +4,11 @@ import java.util.ArrayList;
 public class CornersGame {
     private ChessBoard board;
     private boolean whiteTurn = true; // White starts the game
+    private Bot bot;
 
     public CornersGame() {
-        this.board = new ChessBoard();
+        this.board  =   new ChessBoard();
+        this.bot    =   new Bot(this);
     }
 
     public ChessBoard getBoard() {

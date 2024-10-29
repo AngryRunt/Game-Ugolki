@@ -2,6 +2,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Bot {
+private static Referee referee = new Referee();
+private List<BotChecker>checkers = new ArrayList<>();
+private CornersGame game;
+
+    public Bot(CornersGame game) {
+        this.game = game;
+    }
+
+
     private static class Move{
         private final Position move;
         private final int cost;

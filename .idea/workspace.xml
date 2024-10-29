@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b86fd47d-6fdb-4d1f-8853-b4fd5a5af60a" name="Changes" comment="Cleanup code">
-      <change afterPath="$PROJECT_DIR$/src/Bot.java" afterDir="false" />
+    <list default="true" id="b86fd47d-6fdb-4d1f-8853-b4fd5a5af60a" name="Changes" comment="add equals to piece">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Bot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Bot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CornersGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CornersGame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,27 +34,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Bot.executor": "Run",
-    "Application.ChessGameGUI.executor": "Run",
-    "Application.ChessGameGui.executor": "Run",
-    "Application.CornersGameGui.executor": "Run",
-    "Application.Main.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/angryrunt/dev/angryrunt/Corners-master",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "/home/angryrunt/dev/angryrunt/EDUCATION NGTU/JAVA/DIPLOM_UGOLKI/UGOLKI2/src/Main.java",
-    "vcs.patch.path": "/home/angryrunt/dev/angryrunt",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Bot.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ChessGameGUI.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ChessGameGui.executor&quot;: &quot;Run&quot;,
+    &quot;Application.CornersGameGui.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/angryrunt/dev/angryrunt/Corners-master&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;/home/angryrunt/dev/angryrunt/EDUCATION NGTU/JAVA/DIPLOM_UGOLKI/UGOLKI2/src/Main.java&quot;,
+    &quot;vcs.patch.path&quot;: &quot;/home/angryrunt/dev/angryrunt&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="CornersGameGui" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="CornersGameGui" />
@@ -93,7 +94,8 @@
       <workItem from="1729094529092" duration="91000" />
       <workItem from="1729339780117" duration="17687000" />
       <workItem from="1729697727041" duration="13683000" />
-      <workItem from="1729948778193" duration="4381000" />
+      <workItem from="1729948778193" duration="5560000" />
+      <workItem from="1730129144425" duration="5775000" />
     </task>
     <task id="LOCAL-00001" summary="Game ugolki for diploma">
       <option name="closed" value="true" />
@@ -231,7 +233,23 @@
       <option name="project" value="LOCAL" />
       <updated>1729948658423</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="bot added">
+      <option name="closed" value="true" />
+      <created>1729953194200</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1729953194200</updated>
+    </task>
+    <task id="LOCAL-00019" summary="add equals to piece">
+      <option name="closed" value="true" />
+      <created>1729953550987</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1729953550987</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -252,6 +270,8 @@
     <MESSAGE value="implemented movecounter" />
     <MESSAGE value="fixed problems with game over" />
     <MESSAGE value="Cleanup code" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cleanup code" />
+    <MESSAGE value="bot added" />
+    <MESSAGE value="add equals to piece" />
+    <option name="LAST_COMMIT_MESSAGE" value="add equals to piece" />
   </component>
 </project>
