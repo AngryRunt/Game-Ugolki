@@ -10,16 +10,49 @@ private CornersGame game;
     public Bot(CornersGame game) {
         this.game = game;
     }
-    public static class BotMove{
+    public BotMove GetMove(){
+        checkers.clear();
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 8; j++) {
+                Piece piece = game.getBoard().getPiece(i, j);
+                if ((piece != null) && piece.color == PieceColor.BLACK) {
+                    List<Position>positions = game.getLegalMovesForPieceAt(piece.position);
+                    List<Move>moves = new ArrayList<>();
+                    for (Position position : positions) {
+                        moves.add(new Move(position));
+                    }
+                    checkers.add(new BotChecker(piece.position, moves ));
+                }
+            }
+        }
+        Position startposition = null;
+        Position endposition = null;
+        int maxcost = -10000;
+        for (BotChecker checker : checkers) {
+            int penalty = 0;
+            for (BotChecker C : checkers) {
+                if (!checker.equals(C)){
+                    penalty += C.getPenalty();
+                }
+            }
+            for (Move move : checker.getMoves()) {
+                if (move.getCost() - penalty > maxcost) {
+                    maxcost = move.getCost() - penalty;
+                    startposition = checker.getPosition();
+                    endposition = move.getMove();
 
+                }
+            }
+        }
+        return new BotMove(startposition, endposition);
+    }
+    public static class BotMove{
+        private Position startpos;
+        private Position endpos;
         public BotMove(Position startpos, Position endpos) {
             this.startpos = startpos;
             this.endpos = endpos;
         }
-
-        private Position startpos;
-        private Position endpos;
-
         public Position getStartpos() {
             return startpos;
         }
@@ -30,23 +63,37 @@ private CornersGame game;
 
     }
 
-
     private static class Move{
         private final Position move;
         private final int cost;
-
-        public Move(Position move, int cost) {
-            this.cost = cost;
+        public Move(Position move) {
+            this.cost = referee.getCost(move);
             this.move = move;
+        }
+        public int getCost() {
+            return cost;
+        }
+        public Position getMove() {
+            return move;
         }
     }
     private static class BotChecker extends Checker{
         private List<Move> moves = new ArrayList<>();
-
-
-        public BotChecker(Position position, List<Move> moves){
+        private int penalty;
+        public BotChecker(Position position, List<Move> moves) {
             super(PieceColor.BLACK, position);
             this.moves = moves;
+            this.penalty = referee.getPenalty(position);
+        }
+        public List<Move> getMoves() {
+            return moves;
+        }
+        public int getPenalty() {
+            return penalty;
+        }
+
+        public Move getmove(int index) {
+            return moves.get(index);
         }
 
     }
