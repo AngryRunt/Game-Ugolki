@@ -46,6 +46,13 @@ public class CornersGame {
         }
         return false;
     }
+    boolean mekeBotMove(){
+        Bot.BotMove botMove = bot.GetMove();
+        if (botMove == null) {
+            return false;
+        }
+        return makeMove(botMove.getStartpos(), botMove.getEndpos());
+    }
 
     public boolean makeMove(Position start, Position end) {
         Piece movingPiece = board.getPiece(start.getRow(), start.getColumn());
