@@ -68,6 +68,11 @@ public class CornersGameGui extends JFrame {
         if (moveResult) {
             refreshBoard();
             checkGameOver();
+            moveResult = game.makeBotMove();
+            if (moveResult) {
+                refreshBoard();
+                checkGameOver();
+            }
         } else if (game.isPieceSelected()) {
             highlightLegalMoves(new Position(row, col));
         }
