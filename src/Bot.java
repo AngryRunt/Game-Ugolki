@@ -19,30 +19,32 @@ private HashMap<Position, Boolean> FixedCheckers = new HashMap<>();
     }
     private boolean FixOnePosition(Position pos, Position refPos) {
 
-        if ((pos.equals(refPos))&&(!FixedCheckers.get(pos))) {
+        if ((pos.equals(refPos)) && (FixedCheckers.get(refPos) != null && !FixedCheckers.get(pos))) {
             FixedCheckers.put(pos, Boolean.TRUE);
             return true;
         }
-        if (!FixedCheckers.get(refPos)) {
+        if (FixedCheckers.get(refPos) != null &&
+                !FixedCheckers.get(refPos)) {
             return false;
         }
         return true;
     }
     private boolean FixTwoPosition(Position pos, Position refPos, Position refPos2) {
 
-        if ((pos.equals(refPos2))&&(!FixedCheckers.get(pos))) {
+        if ((pos.equals(refPos)) && (FixedCheckers.get(refPos) != null && !FixedCheckers.get(pos))) {
             FixedCheckers.put(pos, Boolean.TRUE);
             return true;
         }
-        if ((pos.equals(refPos2))&&(!FixedCheckers.get(pos))) {
+        if ((pos.equals(refPos2)) && (FixedCheckers.get(refPos2) != null && !FixedCheckers.get(pos))) {
             FixedCheckers.put(pos, Boolean.TRUE);
             return true;
         }
-        if (!FixedCheckers.get(refPos)||!FixedCheckers.get(refPos2)) {
+        if ((FixedCheckers.get(refPos) != null && !FixedCheckers.get(refPos)) || (FixedCheckers.get(refPos2) != null && !FixedCheckers.get(refPos2))) {
             return false;
         }
         return true;
     }
+
     private void FixePosition(Position pos) {
         //для одной шашки
         Position refPos = new Position(7,0);
@@ -87,8 +89,8 @@ private HashMap<Position, Boolean> FixedCheckers = new HashMap<>();
             for (int j = 0; j < 8; j++) {
                 Piece piece = game.getBoard().getPiece(i, j);
                 if ((piece != null) && piece.color == PieceColor.BLACK) {
-                    if (((FixedCheckers.get(piece.getPosition() != null))&&
-                            ((FixedCheckers.get(piece.getPosition()))))) {
+                    if ((FixedCheckers.get(piece.getPosition()) != null) &&
+                            (FixedCheckers.get(piece.getPosition()))) {
                         continue;
 
                     }
@@ -112,8 +114,8 @@ private HashMap<Position, Boolean> FixedCheckers = new HashMap<>();
                 }
             }
             for (LegalMove move : checker.getLegalMoves()) {
-                if (move.getCost() - penalty > maxcost) {
-                    maxcost = move.getCost() - penalty;
+                if (-penalty > maxcost) {
+                    maxcost = -penalty;
                     startposition = checker.getPosition();
                     endposition = move.getMove();
 
