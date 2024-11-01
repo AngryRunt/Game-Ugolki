@@ -1,14 +1,84 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class Bot {
 private static Referee referee = new Referee();
 private List<BotChecker>checkers = new ArrayList<>();
 private CornersGame game;
+private HashMap<Position, Boolean> FixedCheckers = new HashMap<>();
 
 
     public Bot(CornersGame game) {
         this.game = game;
+        for (int i = 5; i < 8; i++) {
+            for (int j = 0; j < 3; j++) {
+                this.FixedCheckers.put(new Position(i, j), false);
+            }
+        }
+    }
+    private boolean FixOnePosition(Position pos, Position refPos) {
+
+        if ((pos.equals(refPos))&&(!FixedCheckers.get(pos))) {
+            FixedCheckers.put(pos, Boolean.TRUE);
+            return true;
+        }
+        if (!FixedCheckers.get(refPos)) {
+            return false;
+        }
+        return true;
+    }
+    private boolean FixTwoPosition(Position pos, Position refPos, Position refPos2) {
+
+        if ((pos.equals(refPos2))&&(!FixedCheckers.get(pos))) {
+            FixedCheckers.put(pos, Boolean.TRUE);
+            return true;
+        }
+        if ((pos.equals(refPos2))&&(!FixedCheckers.get(pos))) {
+            FixedCheckers.put(pos, Boolean.TRUE);
+            return true;
+        }
+        if (!FixedCheckers.get(refPos)||!FixedCheckers.get(refPos2)) {
+            return false;
+        }
+        return true;
+    }
+    private void FixePosition(Position pos) {
+        //для одной шашки
+        Position refPos = new Position(7,0);
+        if (!FixOnePosition(pos, refPos)) {
+            return;
+        }
+        // для двух шашек
+        refPos = new Position(7,1);
+        Position refPos2 = new Position(6,0);
+        if (!FixTwoPosition(pos, refPos, refPos2)) {
+            return;
+        }
+
+        //для одной шашки
+        refPos = new Position(6,1);
+        if (!FixOnePosition(pos, refPos)) {
+            return;
+        }
+        // для двух шашек
+        refPos = new Position(5,0);
+        refPos2 = new Position(7,2);
+        if (!FixTwoPosition(pos, refPos, refPos2)) {
+            return;
+        }
+        // для двух шашек
+        refPos = new Position(5,1);
+        refPos2 = new Position(6,2);
+        if (!FixTwoPosition(pos, refPos, refPos2)) {
+            return;
+        }
+        //для одной шашки
+        refPos = new Position(5,2);
+        if (!FixOnePosition(pos, refPos)) {
+            return;
+        }
+
     }
 
     public BotMove GetMove(){
@@ -17,6 +87,11 @@ private CornersGame game;
             for (int j = 0; j < 8; j++) {
                 Piece piece = game.getBoard().getPiece(i, j);
                 if ((piece != null) && piece.color == PieceColor.BLACK) {
+                    if (((FixedCheckers.get(piece.getPosition() != null))&&
+                            ((FixedCheckers.get(piece.getPosition()))))) {
+                        continue;
+
+                    }
                     List<Position>positions = game.getLegalMovesForPieceAt(piece.position);
                     List<LegalMove>moves = new ArrayList<>();
                     for (Position position : positions) {
@@ -45,6 +120,7 @@ private CornersGame game;
                 }
             }
         }
+        FixePosition(endposition);
         return new BotMove(startposition, endposition);
     }
 
@@ -109,7 +185,7 @@ private CornersGame game;
         private int [][] cost = new int[8][8];
         private int [][] penalty = new int[8][8];
         public Referee() {
-            int mincost = 800;
+            int mincost = 200;
             int maxpenalty = 100;
             for (int k = 7; k >= 0; k--){
                 for (int i = 7; i >= 7 - k; i--){
