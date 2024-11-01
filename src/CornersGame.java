@@ -46,7 +46,8 @@ public class CornersGame {
         }
         return false;
     }
-    boolean mekeBotMove(){
+
+    boolean makeBotMove() {
         Bot.BotMove botMove = bot.GetMove();
         if (botMove == null) {
             return false;
@@ -213,6 +214,7 @@ public class CornersGame {
             }
         }
     }
+
     private final MoveCounter counter = new MoveCounter();
     private static class MoveCounter{
         private int WhiteCounter = 0;
@@ -225,12 +227,14 @@ public class CornersGame {
                         default -> -1;
                     };
                 }
-                public void ResetCounter(){
+
+                public void ResetCounter() {
                     WhiteCounter = 0;
                     BlackCounter = 0;
                 }
+
                  public void UpCounter(PieceColor color){
-                        switch(color){
+                        switch(color) {
                             case WHITE:
                                 WhiteCounter++;
                                 break;
@@ -238,6 +242,7 @@ public class CornersGame {
                                 BlackCounter++;
                                 break;
                             }
+
                     }
              }
 }
