@@ -61,7 +61,7 @@ public class CornersGame {
             return false;
         }
 // проверяем, находится ли end в списке разрешенных ходов
-        if (legalMoves.contains(end)) {
+        if (getLegalMovesForPieceAt(start).contains(end)) {
             counter.UpCounter(movingPiece.color);
             board.movePiece(start, end);
             whiteTurn = !whiteTurn;
@@ -177,7 +177,17 @@ public class CornersGame {
                     //при том, что после прыжка разрешен только прыжок
                     // поэтому проверяем, что функция была вызвана не рекурсивно
                 } else if (!isRecursiveCall) {
-                    legalMoves.add(newPos);
+
+                    if (whiteTurn) {
+                        if ((move[0] == -1 && move[1] == 0) || (move[0] == 0 && move[1] == 1)) {
+                            legalMoves.add(newPos);
+                        }
+                    }
+                    else {
+                        if ((move[0] == 1 && move[1] == 0) || (move[0] == 0 && move[1] == -1)) {
+                            legalMoves.add(newPos);
+                        }
+                    }
                 }
             }
         }

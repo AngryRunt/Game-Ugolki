@@ -109,9 +109,9 @@ private HashMap<Position, Boolean> FixedCheckers = new HashMap<>();
         for (BotChecker checker : checkers) {
             int penalty = 0;
             for (BotChecker C : checkers) {
-                if (!checker.equals(C)){
+                //if (!checker.equals(C)){
                     penalty += C.getPenalty();
-                }
+                //}
             }
             for (LegalMove move : checker.getLegalMoves()) {
                 if (-penalty > maxcost) {
