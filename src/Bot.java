@@ -109,13 +109,14 @@ private HashMap<Position, Boolean> FixedCheckers = new HashMap<>();
         for (BotChecker checker : checkers) {
             int penalty = 0;
             for (BotChecker C : checkers) {
-                //if (!checker.equals(C)){
+                if (!checker.equals(C)){
                     penalty += C.getPenalty();
-                //}
+                }
             }
             for (LegalMove move : checker.getLegalMoves()) {
-                if (-penalty > maxcost) {
-                    maxcost = -penalty;
+                int p = -(penalty /*+ referee.getPenalty(move.getMove())*/);
+                if (p > maxcost) {
+                    maxcost = p;
                     startposition = checker.getPosition();
                     endposition = move.getMove();
 
@@ -189,19 +190,20 @@ private HashMap<Position, Boolean> FixedCheckers = new HashMap<>();
         public Referee() {
             int mincost = 200;
             int maxpenalty = 100;
-            for (int k = 7; k >= 0; k--){
-                for (int i = 7; i >= 7 - k; i--){
-                    for (int j = 0; j <= k; j++){
+            for (int k = 7; k >= 0; k--) {
+                for (int i = 7; i >= 7 - k; i--) {
+                    for (int j = 0; j <= k; j++) {
                         cost[i][j] = mincost;
                     }
                 }
                 mincost+=100;
-                for (int i = 7; i >= 7 - k; i--){
-                    for (int j = 0; j <= k; j++){
-                        penalty[i][j] = maxpenalty;
-                    }
-                }
+
                 maxpenalty-=10;
+            }
+            for (int i = 7; i >= 0; i--) {
+                for (int j = 0; j <= 7; j++) {
+                    penalty[i][j] = (8 - i) * (j + 1 );
+                }
             }
         }
 
@@ -214,14 +216,14 @@ private HashMap<Position, Boolean> FixedCheckers = new HashMap<>();
         }
 
         public void print() {
-            for (int i = 0; i < 8; i++){
-                for (int j = 0; j < 8; j++){
+            for (int i = 0; i < 8; i++) {
+                for (int j = 0; j < 8; j++) {
                     System.out.print(cost[i][j] + " \t");
                 }
                 System.out.println();
             }
-            for (int i = 0; i < 8; i++){
-                for (int j = 0; j < 8; j++){
+            for (int i = 0; i < 8; i++) {
+                for (int j = 0; j < 8; j++) {
                     System.out.print(penalty[i][j] + "\t");
                 }
                 System.out.println();
