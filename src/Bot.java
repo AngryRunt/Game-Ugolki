@@ -95,11 +95,12 @@ private HashMap<Position, Boolean> FixedCheckers = new HashMap<>();
 
                     }
                     List<Position>positions = game.getLegalMovesForPieceAt(piece.position);
-                    List<LegalMove>moves = new ArrayList<>();
-                    for (Position position : positions) {
-                        moves.add(new LegalMove(position));
+                    if (positions.isEmpty()) {
+                        continue;
                     }
-                    checkers.add(new BotChecker(piece.position, moves ));
+
+
+                    checkers.add(new BotChecker(piece.position, new ArrayList<>(positions)));
                 }
             }
         }
@@ -113,12 +114,12 @@ private HashMap<Position, Boolean> FixedCheckers = new HashMap<>();
                     penalty += C.getPenalty();
                 }
             }
-            for (LegalMove move : checker.getLegalMoves()) {
+            for (Position move : checker.getLegalMoves()) {
                 int p = -(penalty /*+ referee.getPenalty(move.getMove())*/);
                 if (p > maxcost) {
                     maxcost = p;
                     startposition = checker.getPosition();
-                    endposition = move.getMove();
+                    endposition = move;
 
                 }
             }
@@ -144,33 +145,18 @@ private HashMap<Position, Boolean> FixedCheckers = new HashMap<>();
         }
     }
 
-    private static class LegalMove {
-        private final Position move;
-        private final int cost;
-        public LegalMove(Position move) {
-            this.cost = referee.getCost(move);
-            this.move = move;
-        }
 
-        public int getCost() {
-            return cost;
-        }
-
-        public Position getMove() {
-            return move;
-        }
-    }
 
     private static class BotChecker extends Checker{
-        private List<LegalMove> legalMoves = new ArrayList<>();
+        private List<Position> legalMoves = new ArrayList<>();
         private int penalty;
-        public BotChecker(Position position, List<LegalMove> moves) {
+        public BotChecker(Position position, List<Position> moves) {
             super(PieceColor.BLACK, position);
             this.legalMoves = moves;
             this.penalty = referee.getPenalty(position);
         }
 
-        public List<LegalMove> getLegalMoves() {
+        public List<Position> getLegalMoves() {
             return legalMoves;
         }
 
@@ -178,7 +164,7 @@ private HashMap<Position, Boolean> FixedCheckers = new HashMap<>();
             return penalty;
         }
 
-        public LegalMove getmove(int index) {
+        public Position getmove(int index) {
             return legalMoves.get(index);
         }
 
