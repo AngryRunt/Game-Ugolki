@@ -113,7 +113,7 @@ public class CornersGameGui extends JFrame {
     private void checkGameOver() {
         PieceColor currentPlayer = game.getCurrentPlayerColor() == PieceColor.WHITE ? PieceColor.BLACK : PieceColor.WHITE;
         if (game.isCheckmate(currentPlayer)) {
-            int response = JOptionPane.showConfirmDialog(this, "Checkmate! Would you like to play again?", "Game Over",
+            int response = JOptionPane.showConfirmDialog(this, "Checkmate! \n" + game.getWinString() + "\nWould you like to play again?", "Game Over",
                     JOptionPane.YES_NO_OPTION);
             if (response == JOptionPane.YES_OPTION) {
                 resetGame();

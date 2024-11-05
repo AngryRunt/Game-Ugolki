@@ -5,7 +5,11 @@ public class CornersGame {
     private ChessBoard board;
     private boolean whiteTurn = true; // White starts the game
     private Bot bot;
+    private String WinString = "Winner is ";
 
+    public String getWinString() {
+        return WinString;
+    }
     public CornersGame() {
         this.board  =   new ChessBoard();
         this.bot    =   new Bot(this);
@@ -96,7 +100,12 @@ public class CornersGame {
                 }
             }
 
-            return count == 0 ? false : true;
+
+           if (count == 0) {
+               updateWinnerStringToLose(color);
+               return false;
+           }
+           return true;
         }
 
         int i = 0, j = 0;
@@ -121,7 +130,34 @@ public class CornersGame {
             }
         }
 
-        return count == 9 ? true : false;
+
+if (count == 9) {
+    updateWinnerStringToWin(color);
+    return true;
+
+}
+return false;
+    }
+
+    private void updateWinnerStringToWin(PieceColor color) {
+        if (color == PieceColor.WHITE) {
+            this.WinString += "white";
+
+        }
+
+        else {
+            this.WinString += "black";
+        }
+    }
+    private void updateWinnerStringToLose(PieceColor color) {
+        if (color == PieceColor.WHITE) {
+            this.WinString = "LOSE";
+
+        }
+
+        else {
+            this.WinString = "LOSE";
+        }
     }
 
     private boolean isPositionOnBoard(Position position) {
