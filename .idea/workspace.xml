@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b86fd47d-6fdb-4d1f-8853-b4fd5a5af60a" name="Changes" comment="fixed bot moves">
+    <list default="true" id="b86fd47d-6fdb-4d1f-8853-b4fd5a5af60a" name="Changes" comment="update bot behaviour">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Bot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Bot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CornersGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CornersGame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +97,9 @@
       <workItem from="1730129144425" duration="6566000" />
       <workItem from="1730305654357" duration="15764000" />
       <workItem from="1730484309581" duration="4587000" />
-      <workItem from="1730640347035" duration="1573000" />
+      <workItem from="1730640347035" duration="3847000" />
+      <workItem from="1730644251642" duration="5660000" />
+      <workItem from="1730821167019" duration="958000" />
     </task>
     <task id="LOCAL-00001" summary="Game ugolki for diploma">
       <option name="closed" value="true" />
@@ -323,7 +325,39 @@
       <option name="project" value="LOCAL" />
       <updated>1730490694832</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="change square in square penalty matrix to product penalty matrix">
+      <option name="closed" value="true" />
+      <created>1730642231985</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1730642231985</updated>
+    </task>
+    <task id="LOCAL-00030" summary="optimized bot code">
+      <option name="closed" value="true" />
+      <created>1730644883699</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1730644883699</updated>
+    </task>
+    <task id="LOCAL-00031" summary="update bot behaviour">
+      <option name="closed" value="true" />
+      <created>1730646458776</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1730646458776</updated>
+    </task>
+    <task id="LOCAL-00032" summary="update bot behaviour">
+      <option name="closed" value="true" />
+      <created>1730647904162</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1730647904162</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -347,9 +381,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Game ugolki for diploma" />
-    <MESSAGE value="restored chess game" />
-    <MESSAGE value="Changed places of figuries. Pawns replaced by checkers" />
     <MESSAGE value="renamed pawn to checker" />
     <MESSAGE value="Implemented legal moves for checker" />
     <MESSAGE value="Implemented recursive highlightning for jumping" />
@@ -372,6 +403,9 @@
     <MESSAGE value="implemented fixed destination positions for botchecker" />
     <MESSAGE value="remove bonus" />
     <MESSAGE value="fixed bot moves" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed bot moves" />
+    <MESSAGE value="change square in square penalty matrix to product penalty matrix" />
+    <MESSAGE value="optimized bot code" />
+    <MESSAGE value="update bot behaviour" />
+    <option name="LAST_COMMIT_MESSAGE" value="update bot behaviour" />
   </component>
 </project>

@@ -74,7 +74,7 @@ public class CornersGame {
     public boolean isCheckmate(PieceColor color) {
         System.out.println("WHITEMOVE" + String.valueOf(counter.getcounter(PieceColor.WHITE)));
         System.out.println("BLACKEMOVE" + String.valueOf(counter.getcounter(PieceColor.BLACK)));
-        if (counter.getcounter(color) == 12){
+        if (counter.getcounter(color) == 27){
             int i = 0, j = 0;
 
             if (color == PieceColor.WHITE) {
@@ -90,7 +90,7 @@ public class CornersGame {
             int count = 0;
             for (int r = i; r < endI; r++) {
                 for (int c = j; c < endJ; c++) {
-                    if (board.getPiece(r, c) != null) {
+                    if ((board.getPiece(r, c) != null) && (board.getPiece(r, c).getColor() == color)) {
                         count++;
                     }
                 }
