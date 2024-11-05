@@ -125,7 +125,6 @@ private HashMap<Position, Boolean> FixedCheckers = new HashMap<>();
             }
         }
         FixePosition(endposition);
-        System.out.println("Move penalty: " + String.valueOf(maxcost));
         return new BotMove(startposition, endposition);
     }
 
@@ -172,21 +171,9 @@ private HashMap<Position, Boolean> FixedCheckers = new HashMap<>();
     }
 
     private static class Referee {
-        private int [][] cost = new int[8][8];
         private int [][] penalty = new int[8][8];
         public Referee() {
-            int mincost = 200;
-            int maxpenalty = 100;
-            for (int k = 7; k >= 0; k--) {
-                for (int i = 7; i >= 7 - k; i--) {
-                    for (int j = 0; j <= k; j++) {
-                        cost[i][j] = mincost;
-                    }
-                }
-                mincost+=100;
 
-                maxpenalty-=10;
-            }
             for (int i = 7; i >= 0; i--) {
                 for (int j = 0; j <= 7; j++) {
                     penalty[i][j] = (8 - i) * (j + 1 );
@@ -200,21 +187,14 @@ private HashMap<Position, Boolean> FixedCheckers = new HashMap<>();
             }
         }
 
-        public int getCost(Position position) {
-            return cost[position.getRow()][position.getColumn()];
-        }
+
 
         public int getPenalty(Position position) {
             return penalty[position.getRow()][position.getColumn()];
         }
 
         public void print() {
-            for (int i = 0; i < 8; i++) {
-                for (int j = 0; j < 8; j++) {
-                    System.out.print(cost[i][j] + " \t");
-                }
-                System.out.println();
-            }
+
             for (int i = 0; i < 8; i++) {
                 for (int j = 0; j < 8; j++) {
                     System.out.print(penalty[i][j] + "\t");
