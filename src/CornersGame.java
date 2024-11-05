@@ -102,7 +102,7 @@ public class CornersGame {
 
 
            if (count == 0) {
-               updateWinnerStringToLose(color);
+               this.WinString = "Lost game";
                return false;
            }
            return true;
@@ -149,16 +149,7 @@ return false;
             this.WinString += "black";
         }
     }
-    private void updateWinnerStringToLose(PieceColor color) {
-        if (color == PieceColor.WHITE) {
-            this.WinString = "LOSE";
 
-        }
-
-        else {
-            this.WinString = "LOSE";
-        }
-    }
 
     private boolean isPositionOnBoard(Position position) {
         return position.getRow() >= 0 && position.getRow() < board.getBoard().length &&
