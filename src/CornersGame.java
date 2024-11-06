@@ -75,7 +75,7 @@ public class CornersGame {
     }
 
 
-    public boolean isCheckmate(PieceColor color) {
+    public boolean isGameOver(PieceColor color) {
 
         if (counter.getcounter(color) == 27){
             int i = 0, j = 0;
@@ -101,9 +101,10 @@ public class CornersGame {
 
 
            if (count == 0) {
-               this.WinString = "Lost game";
+
                return false;
            }
+            this.WinString = "Lost game";
            return true;
         }
 
