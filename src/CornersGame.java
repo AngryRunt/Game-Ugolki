@@ -100,12 +100,12 @@ public class CornersGame {
             }
 
 
-           if (count == 0) {
+           if (count != 0) {
+               this.WinString = "Lost game";
+               return true;
 
-               return false;
            }
-            this.WinString = "Lost game";
-           return true;
+
         }
 
         int i = 0, j = 0;
