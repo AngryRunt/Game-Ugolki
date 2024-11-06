@@ -23,6 +23,7 @@ public class CornersGame {
         this.board = new ChessBoard();
         this.whiteTurn = true;
         counter.ResetCounter();
+        this.WinString =   "Winner is ";
     }
 
     public PieceColor getCurrentPlayerColor() {
