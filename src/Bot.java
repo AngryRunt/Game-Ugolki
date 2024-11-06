@@ -111,11 +111,11 @@ private HashMap<Position, Boolean> FixedCheckers = new HashMap<>();
             int penalty = 0;
             for (BotChecker C : checkers) {
                 if (!checker.equals(C)){
-                    penalty += C.getPenalty();
+                    penalty += (int) (C.getPenalty() +0 + (Math.random() * 5));;
                 }
             }
             for (Position move : checker.getLegalMoves()) {
-                int p = -(penalty /*+ referee.getPenalty(move)*/);
+                int p = -(penalty + referee.getPenalty(move));
                 if (p > maxcost) {
                     maxcost = p;
                     startposition = checker.getPosition();
@@ -125,6 +125,7 @@ private HashMap<Position, Boolean> FixedCheckers = new HashMap<>();
             }
         }
         FixePosition(endposition);
+        System.out.println(maxcost);
         return new BotMove(startposition, endposition);
     }
 
