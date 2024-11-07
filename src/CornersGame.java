@@ -225,34 +225,6 @@ return false;
         addSingleMoves(position, moves, legalMoves, false);
     }
 
-
-    private void addPawnMoves(Position position, PieceColor color, List<Position> legalMoves) {
-        int direction = color == PieceColor.WHITE ? -1 : 1;
-        Position newPos = new Position(position.getRow() + direction, position.getColumn());
-        if (isPositionOnBoard(newPos) && board.getPiece(newPos.getRow(), newPos.getColumn()) == null) {
-            legalMoves.add(newPos);
-        }
-
-        if ((color == PieceColor.WHITE && position.getRow() == 6)
-                || (color == PieceColor.BLACK && position.getRow() == 1)) {
-            newPos = new Position(position.getRow() + 2 * direction, position.getColumn());
-            Position intermediatePos = new Position(position.getRow() + direction, position.getColumn());
-            if (isPositionOnBoard(newPos) && board.getPiece(newPos.getRow(), newPos.getColumn()) == null
-                    && board.getPiece(intermediatePos.getRow(), intermediatePos.getColumn()) == null) {
-                legalMoves.add(newPos);
-            }
-        }
-
-        int[] captureCols = { position.getColumn() - 1, position.getColumn() + 1 };
-        for (int col : captureCols) {
-            newPos = new Position(position.getRow() + direction, col);
-            if (isPositionOnBoard(newPos) && board.getPiece(newPos.getRow(), newPos.getColumn()) != null &&
-                    board.getPiece(newPos.getRow(), newPos.getColumn()).getColor() != color) {
-                legalMoves.add(newPos);
-            }
-        }
-    }
-
     private final MoveCounter counter = new MoveCounter();
     private static class MoveCounter{
         private int WhiteCounter = 0;

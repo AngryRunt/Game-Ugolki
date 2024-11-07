@@ -45,7 +45,7 @@ private HashMap<Position, Boolean> FixedCheckers = new HashMap<>();
         return true;
     }
 
-    private void FixePosition(Position pos) {
+    private void FixePosition(Position pos) { // запрещает переставлять шашку внутри дома, если она заняля крайнюю позицию
         //для одной шашки
         Position refPos = new Position(7,0);
         if (!FixOnePosition(pos, refPos)) {
@@ -83,7 +83,7 @@ private HashMap<Position, Boolean> FixedCheckers = new HashMap<>();
 
     }
 
-    public BotMove GetMove(){
+    public BotMove GetMove(){ //генерирует ходы для бота
         checkers.clear();
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
@@ -129,9 +129,9 @@ private HashMap<Position, Boolean> FixedCheckers = new HashMap<>();
         return new BotMove(startposition, endposition);
     }
 
-    public static class BotMove {
-        private Position startpos;
-        private Position endpos;
+    public static class BotMove { //инкапсулирует для бота ход, состоящий из начального и конечного положения
+        private final Position startpos;
+        private final Position endpos;
         public BotMove(Position startpos, Position endpos) {
             this.startpos = startpos;
             this.endpos = endpos;
@@ -148,9 +148,9 @@ private HashMap<Position, Boolean> FixedCheckers = new HashMap<>();
 
 
 
-    private static class BotChecker extends Checker{
-        private List<Position> legalMoves = new ArrayList<>();
-        private int penalty;
+    private static class BotChecker extends Checker{ //инкапсулирует в шашку её легальные ходы
+        private final List<Position> legalMoves;
+        private final int penalty;
         public BotChecker(Position position, List<Position> moves) {
             super(PieceColor.BLACK, position);
             this.legalMoves = moves;
@@ -163,10 +163,6 @@ private HashMap<Position, Boolean> FixedCheckers = new HashMap<>();
 
         public int getPenalty() {
             return penalty;
-        }
-
-        public Position getmove(int index) {
-            return legalMoves.get(index);
         }
 
     }

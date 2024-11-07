@@ -14,13 +14,6 @@ public class ChessBoard {
         return board[row][column];
     }
 
-    public void setPiece(int row, int column, Piece piece) {
-        board[row][column] = piece;
-        if (piece != null) {
-            piece.setPosition(new Position(row, column));
-        }
-    }
-
     private void setupPieces() {
 
         // Place checkers
