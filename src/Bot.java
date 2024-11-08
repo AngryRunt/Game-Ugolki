@@ -100,7 +100,7 @@ private HashMap<Position, Boolean> FixedCheckers = new HashMap<>();
                     }
 
 
-                    checkers.add(new BotChecker(piece.position, new ArrayList<>(positions)));
+                    checkers.add(new BotChecker(piece, new ArrayList<>(positions)));
                 }
             }
         }
@@ -111,11 +111,28 @@ private HashMap<Position, Boolean> FixedCheckers = new HashMap<>();
             int penalty = 0;
             for (BotChecker C : checkers) {
                 if (!checker.equals(C)){
-                    penalty += (int) (C.getPenalty() +0 + (Math.random() * 5));;
+                    penalty += (int) (C.getPenalty() + 0 + (Math.random() * 5));;
                 }
             }
             for (Position move : checker.getLegalMoves()) {
-                int p = -(penalty + referee.getPenalty(move));
+                int movep = (int)((referee.getPenalty(move) + Math.random() * 5));
+                int p = -(penalty + 0);
+                if (referee.getPenalty(checker.getPosition()) == 1024){
+                    p = 0;
+                }
+
+                if (referee.getPenalty(move) == 0){
+                    p = 0;
+                }
+
+                if (checker.isPrevPosition(move)){
+                    p-=1000;
+                }
+
+                if (IsMoveBack(checker.getPosition(), move)){
+                    p-=1000;
+                }
+
                 if (p > maxcost) {
                     maxcost = p;
                     startposition = checker.getPosition();
@@ -127,6 +144,15 @@ private HashMap<Position, Boolean> FixedCheckers = new HashMap<>();
         FixePosition(endposition);
         System.out.println(maxcost);
         return new BotMove(startposition, endposition);
+    }
+    private static boolean IsMoveBack (Position startposition, Position endposition) {
+        if (endposition.getRow() < startposition.getRow()) {
+            return true;
+        }
+        if (startposition.getColumn() > endposition.getColumn()) {
+            return true;
+        }
+        return false;
     }
 
     public static class BotMove { //инкапсулирует для бота ход, состоящий из начального и конечного положения
@@ -151,8 +177,11 @@ private HashMap<Position, Boolean> FixedCheckers = new HashMap<>();
     private static class BotChecker extends Checker{ //инкапсулирует в шашку её легальные ходы
         private final List<Position> legalMoves;
         private final int penalty;
-        public BotChecker(Position position, List<Position> moves) {
-            super(PieceColor.BLACK, position);
+        public BotChecker(Piece p, List<Position> moves) {
+            super(PieceColor.BLACK, p.getPosition());
+            if (p instanceof Checker){
+                this.PrevPosition = ((Checker)p).PrevPosition;
+            }
             this.legalMoves = moves;
             this.penalty = referee.getPenalty(position);
         }
@@ -173,7 +202,7 @@ private HashMap<Position, Boolean> FixedCheckers = new HashMap<>();
 
             for (int i = 7; i >= 0; i--) {
                 for (int j = 0; j <= 7; j++) {
-                    penalty[i][j] = (8 - i) * (j + 1 );
+                    penalty[i][j] = (8 - i) * (j + 1) + (int) (0 + (Math.random() * 5));
                 }
             }
             for (int i = 0; i < 3; i++) {
@@ -182,7 +211,9 @@ private HashMap<Position, Boolean> FixedCheckers = new HashMap<>();
                 }
 
             }
+
         }
+
 
 
 

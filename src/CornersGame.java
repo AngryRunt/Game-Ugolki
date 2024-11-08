@@ -68,6 +68,9 @@ public class CornersGame {
 // проверяем, находится ли end в списке разрешенных ходов
         if (getLegalMovesForPieceAt(start).contains(end)) {
             counter.UpCounter(movingPiece.color);
+            if(movingPiece instanceof Checker) {
+                ((Checker) movingPiece).AddPrevPosition(end);
+            }
             board.movePiece(start, end);
             whiteTurn = !whiteTurn;
             return true;
